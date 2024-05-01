@@ -310,17 +310,23 @@ public class App {
         int percentage = (int) (((double) count / numOfCommits) * 100);
         getProgressBar(percentage);
         try {
-            Optional.ofNullable(commit.getAuthor())
-                    .map(GHPerson::getLogin)
-                    .ifPresent(author -> {
-                        try {
-                            commit.listFiles().toList().stream().map(GHCommit.File::getFileName).forEach(filename -> {
-                                contributorsFileMap.computeIfAbsent(filename, k -> new HashSet<>()).add(author);
-                            });
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    });
+            GHUser author = null;
+            try {
+                author = commit.getAuthor();
+            } catch (GHFileNotFoundException e) {
+                System.err.println("\nError with commit, skipping: " + commit);
+                return;
+                
+            }
+            if (author != null) {
+                String authorLogin = commit.getAuthor().getLogin();
+                List<GHCommit.File> files = commit.listFiles().toList();
+    
+                for (GHCommit.File file : files) {
+                    String filename = file.getFileName();
+                    contributorsFileMap.computeIfAbsent(filename, k -> new HashSet<>()).add(authorLogin);
+                }
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
