@@ -13,7 +13,7 @@ This is a Java application that analyzes a GitHub repository. It fetches data fr
 
 ## How to Run
 1. Clone the repository using `git clone https://github.com/RaresPopa04/GithubAnalyzer.git`.
-2. Navigate to the cloned folder `cd cd GithubAnalyzer`.
+2. Navigate to the cloned folder `cd GithubAnalyzer`.
 3. Navigate to the `demo` directory using  `cd demo`.
 4. Set your GitHub Personal Access Token as an environment variable named `GITHUB_TOKEN`.
 5. Build the application using the command `mvn clean package`.
