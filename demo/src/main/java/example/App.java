@@ -141,11 +141,15 @@ public class App {
                     int count = counter.incrementAndGet();
                     int percentage = (int) (((double) count / numOfCommits) * 100);
                     getProgressBar(percentage);
-                    getProgressBar(percentage);
                     try {
                         return commit.getAuthor() != null;
+                    }catch (GHFileNotFoundException e) {
+                        System.err.println("\nError with commit, skipping" + commit);
+                        
+                        return false;
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        System.err.println("\nError with commit, skipping" + commit);
+                        return false;
                     }
 
                 }).collect(Collectors.groupingBy(commit -> {
