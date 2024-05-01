@@ -17,4 +17,4 @@ This is a Java application that analyzes a GitHub repository. It fetches data fr
 2. Set your GitHub Personal Access Token as an environment variable named `GITHUB_TOKEN`.
 3. Build the application using the command `vn clean package`.
 4. After a successful build, a `github-analyzer-1.0-SNAPSHOT.jar` file will be generated in the `target` directory.
-5. Run the application using the command `java -cp "target/classes;target/dependency/*" example.App`.
+5. Run the application using the command `java -cp "target/classes;target/dependency/*" example.App`
