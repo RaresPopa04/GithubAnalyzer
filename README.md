@@ -22,7 +22,7 @@ This is a Java application that analyzes a GitHub repository. It fetches data fr
 
 ## Usage instruction
 The app runs only in the terminal.
-1. The is prompted with a message, where he needs to insert the name of the owner of the repository, next step is to insert the name of the repository.
+1. The user is prompted with a message, where he needs to insert the name of the owner of the repository, next step is to insert the name of the repository.
 2. The users needs to choose between 2 options of analytics on the specified repository.
 3. For the first option, the tool will output the top 10 most common modifications between pairs of users.
 4. For the second option, for each of the contributors, it will output the number of lines written, commits, merge requests and the max length of a comment to a merge request in the last week.
