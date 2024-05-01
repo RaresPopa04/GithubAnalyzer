@@ -20,7 +20,7 @@ This is a Java application that analyzes a GitHub repository. It fetches data fr
 6. After a successful build, a `github-analyzer-1.0-SNAPSHOT.jar` file will be generated in the `target` directory.
 7. Run the application using the command `java -cp "target/classes;target/dependency/*" example.App`.
 
-#Usage instruction
+## Usage instruction
 The app runs only in the terminal.
 1. The is prompted with a message, where he needs to insert the name of the owner of the repository, next step is to insert the name of the repository.
 2. The users needs to choose between 2 options of analytics on the specified repository.
